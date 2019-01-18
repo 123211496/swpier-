@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>基于swiper3.0</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="swiper.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+.wrap{width: 600px;margin: 0 auto;border: 1px solid red;padding: 10px 0;}
+.swiper-slide{padding: 30px 0;}
+.swiper-slide span{ margin: 0 auto; width: 40px;height: 40px;border-radius: 50%;background: #ccc;display: block;transition: all .3s ease}
+.swiper-slide-active span{transform: scale(1.3); background: red}
+.content{position: relative; border-top: 1px solid #ccc;height: 400px; }
+.content:after{
+	content: '';
+	display: block;
+	width: 16px;height: 16px; border: 1px solid #ccc;
+	position: absolute; left: 50%; margin-left: -8px;
+	transform: rotate(45deg); top: -9px;background: #fff;z-index: 10;border-bottom: none;border-right: none
+}
+</style>
+<body>
+	<div class="wrap">
+		<div class="top">
+			<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		            <div class="swiper-slide"><span></span></div>
+		        </div>
+		    </div>
+	    </div>
+	    <div class="content">
+	    	
+	    </div>
+    </div>
+
+</body>
+<script src="swiper.min.js"></script>
+<script>
+ var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 5,
+    initialSlide : 4,
+    centeredSlides: true,
+    paginationClickable: true,
+    onSlideChangeEnd: function(swiper){
+      alert(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+    }
+});
+</script>
+</html>
